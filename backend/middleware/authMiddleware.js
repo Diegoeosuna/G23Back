@@ -20,7 +20,7 @@ const protect = asyncHandler ( async (req, res, next) => {
         } catch (error){
             console.log(error)
             res.status(401)
-            throw new Error('Acceso no autorizado')
+            throw new Error('Acceso no autorizado, aqui')
         }
     } 
     if(!token){
