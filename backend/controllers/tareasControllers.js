@@ -58,10 +58,6 @@ const deleteTarea = asyncHandler(async (req, res) => {
         res.status(200).json({id: tarea._id})
     }
 
-    tarea.deleteOne()
-    res.status(200).json({ id: tarea._id })
-
-
     //const deletedTarea = await Tarea.findByIdAndDelete(req.params.id)
     //tarea.deleteOne()
     //res.status(200).json({ id: tarea._id })
