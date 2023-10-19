@@ -27,7 +27,8 @@ const registerUser = asyncHandler( async (req,res) =>{
     const user = await User.create({
         name,
         email,
-        password:hashedPassword
+        password:hashedPassword,
+        message:'Usuario creado.'
     })
 
     if(user){
@@ -67,14 +68,14 @@ const loginUser = asyncHandler( async (req,res) =>{
     }
 })
 
-const getUserData = asyncHandler( async (req,res) =>{
+const getUserData = asyncHandler(async (req,res) =>{
     res.json(req.user)
 })
 
 //Función para generar el JWT
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
-        expiresIn: '60m'
+        expiresIn: '60d'
     })
 }
 
